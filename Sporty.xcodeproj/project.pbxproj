@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04936E56FD76CC168925EE15 /* Pods_Sporty_SportyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520D7A5BEF642166E827DB86 /* Pods_Sporty_SportyUITests.framework */; };
+		17236F5E0B45633FDD5C4A20 /* Pods_Sporty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D6FAED8758A20C671BC658 /* Pods_Sporty.framework */; };
+		B0B97AF848571853CF22A526 /* Pods_SportyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117A750809A3D9DBBC8CEE3B /* Pods_SportyTests.framework */; };
+		F7070B8D2A99355E005B29C7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F7070B8C2A99355E005B29C7 /* .swiftlint.yml */; };
 		F7758F0B2A9919DA00DB23E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7758F0A2A9919DA00DB23E6 /* AppDelegate.swift */; };
-		F7758F0D2A9919DA00DB23E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7758F0C2A9919DA00DB23E6 /* SceneDelegate.swift */; };
 		F7758F0F2A9919DB00DB23E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7758F0E2A9919DB00DB23E6 /* ViewController.swift */; };
 		F7758F122A9919DB00DB23E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7758F102A9919DB00DB23E6 /* Main.storyboard */; };
 		F7758F142A9919DB00DB23E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7758F132A9919DB00DB23E6 /* Assets.xcassets */; };
@@ -36,9 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		117A750809A3D9DBBC8CEE3B /* Pods_SportyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17436A09C4D8A46BB31C888F /* Pods-Sporty-SportyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporty-SportyUITests.release.xcconfig"; path = "Target Support Files/Pods-Sporty-SportyUITests/Pods-Sporty-SportyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		28B4C1FD2EFB9D618B48D541 /* Pods-Sporty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporty.release.xcconfig"; path = "Target Support Files/Pods-Sporty/Pods-Sporty.release.xcconfig"; sourceTree = "<group>"; };
+		2FFFD331A561F94EA831A526 /* Pods-Sporty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporty.debug.xcconfig"; path = "Target Support Files/Pods-Sporty/Pods-Sporty.debug.xcconfig"; sourceTree = "<group>"; };
+		30D6FAED8758A20C671BC658 /* Pods_Sporty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sporty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		363E1886A8645F7C69CE5E80 /* Pods-SportyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportyTests.debug.xcconfig"; path = "Target Support Files/Pods-SportyTests/Pods-SportyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		520D7A5BEF642166E827DB86 /* Pods_Sporty_SportyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sporty_SportyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A013D7E47D09FFCA9FE245FA /* Pods-SportyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportyTests.release.xcconfig"; path = "Target Support Files/Pods-SportyTests/Pods-SportyTests.release.xcconfig"; sourceTree = "<group>"; };
+		A75986A908F924B526BE5312 /* Pods-Sporty-SportyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporty-SportyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Sporty-SportyUITests/Pods-Sporty-SportyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7070B8C2A99355E005B29C7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F7758F072A9919DA00DB23E6 /* Sporty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sporty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7758F0A2A9919DA00DB23E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7758F0C2A9919DA00DB23E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F7758F0E2A9919DB00DB23E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7758F112A9919DB00DB23E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7758F132A9919DB00DB23E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17236F5E0B45633FDD5C4A20 /* Pods_Sporty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0B97AF848571853CF22A526 /* Pods_SportyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04936E56FD76CC168925EE15 /* Pods_Sporty_SportyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B111AA24F36B83E972C4483 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30D6FAED8758A20C671BC658 /* Pods_Sporty.framework */,
+				520D7A5BEF642166E827DB86 /* Pods_Sporty_SportyUITests.framework */,
+				117A750809A3D9DBBC8CEE3B /* Pods_SportyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECA033EC8AB22B361A7B0849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD331A561F94EA831A526 /* Pods-Sporty.debug.xcconfig */,
+				28B4C1FD2EFB9D618B48D541 /* Pods-Sporty.release.xcconfig */,
+				A75986A908F924B526BE5312 /* Pods-Sporty-SportyUITests.debug.xcconfig */,
+				17436A09C4D8A46BB31C888F /* Pods-Sporty-SportyUITests.release.xcconfig */,
+				363E1886A8645F7C69CE5E80 /* Pods-SportyTests.debug.xcconfig */,
+				A013D7E47D09FFCA9FE245FA /* Pods-SportyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7070B8E2A9937E1005B29C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7758F0E2A9919DB00DB23E6 /* ViewController.swift */,
+				F7758F102A9919DB00DB23E6 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7070B8F2A9937F3005B29C7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F7070B902A993814005B29C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F7758EFE2A9919DA00DB23E6 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +144,9 @@
 				F7758F202A9919DC00DB23E6 /* SportyTests */,
 				F7758F2A2A9919DC00DB23E6 /* SportyUITests */,
 				F7758F082A9919DA00DB23E6 /* Products */,
+				ECA033EC8AB22B361A7B0849 /* Pods */,
+				5B111AA24F36B83E972C4483 /* Frameworks */,
+				F7070B8C2A99355E005B29C7 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				F7758F0A2A9919DA00DB23E6 /* AppDelegate.swift */,
-				F7758F0C2A9919DA00DB23E6 /* SceneDelegate.swift */,
-				F7758F0E2A9919DB00DB23E6 /* ViewController.swift */,
-				F7758F102A9919DB00DB23E6 /* Main.storyboard */,
-				F7758F132A9919DB00DB23E6 /* Assets.xcassets */,
-				F7758F152A9919DB00DB23E6 /* LaunchScreen.storyboard */,
-				F7758F182A9919DB00DB23E6 /* Info.plist */,
+				F7758F3A2A99228400DB23E6 /* Assets */,
+				F7070B902A993814005B29C7 /* Models */,
+				F7070B8F2A9937F3005B29C7 /* Networking */,
+				F7070B8E2A9937E1005B29C7 /* Views */,
 			);
 			path = Sporty;
 			sourceTree = "<group>";
@@ -127,6 +189,16 @@
 			path = SportyUITests;
 			sourceTree = "<group>";
 		};
+		F7758F3A2A99228400DB23E6 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F7758F132A9919DB00DB23E6 /* Assets.xcassets */,
+				F7758F182A9919DB00DB23E6 /* Info.plist */,
+				F7758F152A9919DB00DB23E6 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7758F312A9919DC00DB23E6 /* Build configuration list for PBXNativeTarget "Sporty" */;
 			buildPhases = (
+				261F541C678E2A1C1241D1C4 /* [CP] Check Pods Manifest.lock */,
 				F7758F032A9919DA00DB23E6 /* Sources */,
 				F7758F042A9919DA00DB23E6 /* Frameworks */,
 				F7758F052A9919DA00DB23E6 /* Resources */,
+				F7070B8B2A993418005B29C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -151,6 +225,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7758F342A9919DC00DB23E6 /* Build configuration list for PBXNativeTarget "SportyTests" */;
 			buildPhases = (
+				28D1BA973F963DC6856A8DDC /* [CP] Check Pods Manifest.lock */,
 				F7758F192A9919DC00DB23E6 /* Sources */,
 				F7758F1A2A9919DC00DB23E6 /* Frameworks */,
 				F7758F1B2A9919DC00DB23E6 /* Resources */,
@@ -169,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7758F372A9919DC00DB23E6 /* Build configuration list for PBXNativeTarget "SportyUITests" */;
 			buildPhases = (
+				D6B83F0B013893E0682C6A3A /* [CP] Check Pods Manifest.lock */,
 				F7758F232A9919DC00DB23E6 /* Sources */,
 				F7758F242A9919DC00DB23E6 /* Frameworks */,
 				F7758F252A9919DC00DB23E6 /* Resources */,
@@ -207,7 +283,7 @@
 				};
 			};
 			buildConfigurationList = F7758F022A9919DA00DB23E6 /* Build configuration list for PBXProject "Sporty" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -231,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7070B8D2A99355E005B29C7 /* .swiftlint.yml in Resources */,
 				F7758F172A9919DB00DB23E6 /* LaunchScreen.storyboard in Resources */,
 				F7758F142A9919DB00DB23E6 /* Assets.xcassets in Resources */,
 				F7758F122A9919DB00DB23E6 /* Main.storyboard in Resources */,
@@ -253,6 +330,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		261F541C678E2A1C1241D1C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sporty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28D1BA973F963DC6856A8DDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B83F0B013893E0682C6A3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sporty-SportyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7070B8B2A993418005B29C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7758F032A9919DA00DB23E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,7 +424,6 @@
 			files = (
 				F7758F0F2A9919DB00DB23E6 /* ViewController.swift in Sources */,
 				F7758F0B2A9919DA00DB23E6 /* AppDelegate.swift in Sources */,
-				F7758F0D2A9919DA00DB23E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +595,7 @@
 		};
 		F7758F322A9919DC00DB23E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFFD331A561F94EA831A526 /* Pods-Sporty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,8 +604,9 @@
 				DEVELOPMENT_TEAM = 9PNKWCG29Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sporty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sporty;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -453,6 +618,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smarog.Sporty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,6 +629,7 @@
 		};
 		F7758F332A9919DC00DB23E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28B4C1FD2EFB9D618B48D541 /* Pods-Sporty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,8 +638,9 @@
 				DEVELOPMENT_TEAM = 9PNKWCG29Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sporty/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sporty;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -482,6 +652,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smarog.Sporty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,6 +663,7 @@
 		};
 		F7758F352A9919DC00DB23E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 363E1886A8645F7C69CE5E80 /* Pods-SportyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +684,7 @@
 		};
 		F7758F362A9919DC00DB23E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A013D7E47D09FFCA9FE245FA /* Pods-SportyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +705,7 @@
 		};
 		F7758F382A9919DC00DB23E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A75986A908F924B526BE5312 /* Pods-Sporty-SportyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +724,7 @@
 		};
 		F7758F392A9919DC00DB23E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17436A09C4D8A46BB31C888F /* Pods-Sporty-SportyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
