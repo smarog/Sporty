@@ -8,10 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let homescreenViewModel = HomescreenViewModel.sharedInstance
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+        homescreenViewModel.loadSportEvents()
+    }
 }
