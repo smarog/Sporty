@@ -11,7 +11,7 @@ struct Sports: Codable {
     let sportID: String
     let sportName: String
     let events: [Event]
-
+    var isExpanded: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case sportID = "i"
