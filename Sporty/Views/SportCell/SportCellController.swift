@@ -24,9 +24,8 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        eventsCollectionView.delegate = self
-        eventsCollectionView.dataSource = self
-        eventsCollectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: "eventCell")
+        
+        setupCollectionView()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadCollectionView),
                                                name: NSNotification.Name("reloadEventsCollectionView"),
@@ -36,6 +35,18 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+
+    /// Sets up the events collection view
+    func setupCollectionView() {
+        eventsCollectionView.delegate = self
+        eventsCollectionView.dataSource = self
+        var flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: 140, height: 140)
+        flowLayout.scrollDirection = .horizontal
+        eventsCollectionView.collectionViewLayout = flowLayout
+        eventsCollectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: "eventCell")
     }
 
 
@@ -78,7 +89,9 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
     /// Sets up the collection view cell.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCellController
-        guard let event = sportCellViewModel?.getEventData(index: indexPath.item) else { return cell }
+        guard let unwrappedViewModel = sportCellViewModel else { return cell }
+        guard unwrappedViewModel.getEventsCount() > indexPath.row else { return cell }
+        guard let event = sportCellViewModel?.getEventData(index: indexPath.row) else { return cell }
         cell.setupCell(eventData: event, sportViewModelDelegate: sportCellViewModel)
         return cell
     }
