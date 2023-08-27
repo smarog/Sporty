@@ -22,7 +22,7 @@ enum SportID: String {
 
 
 class HomescreenViewModel {
-    private var sportsData: [Sports] = []
+    var sportsData: [Sports] = []
 
 
     /// Sets up the Navigation Bar.
@@ -129,7 +129,11 @@ class HomescreenViewModel {
         if let formattedSportID = getSelectedSportID(selectedIndex: index) {
             let sportIconName = getSportIconName(formattedSportID)
             let events = getSportEvents(sportID: formattedSportID)
-            cell.setupCell(sportIconName: sportIconName, sportName: sport.sportName, isExpanded: sport.isExpanded, sportEvents: events)
+            cell.setupCell(sportIconName: sportIconName,
+                           sportName: sport.sportName,
+                           isExpanded: sport.isExpanded,
+                           sportEvents: events,
+                           homescreenViewModelDelegate: self)
         }
 
         return cell
@@ -208,5 +212,19 @@ class HomescreenViewModel {
         guard let selectedSport = sportsData.first(where: { $0.sportID == sportID.rawValue }) else { return [] }
 
         return selectedSport.events
+    }
+
+
+    /// Updates the sport events datada.
+    ///
+    /// - Parameters:
+    ///   - sportID: The id of the sport to update its event data.
+    ///   - eventID: The id of the event to update.
+    ///   - isFavourite: The favourite status of the event.
+    func updateSportData(sportID: String, eventID: String, isFavourite: Bool) {
+        guard let sportIndex = sportsData.firstIndex(where: { $0.sportID == sportID }) else { return }
+        guard let eventIndex =  sportsData[sportIndex].events.firstIndex(where: { $0.eventID == eventID }) else { return }
+
+        sportsData[sportIndex].events[eventIndex].isFavourite = isFavourite
     }
 }

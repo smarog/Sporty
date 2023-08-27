@@ -11,9 +11,12 @@ import UIKit
 class EventCellViewModel {
     var event: Event = Event(eventID: "", sportID: "", eventName: "", startTime: 0)
 
+    weak var sportViewModelDelegate: SportCellViewModel?
 
-    init(event: Event) {
+
+    init(event: Event, sportViewModelDelegate: SportCellViewModel?) {
         self.event = event
+        self.sportViewModelDelegate = sportViewModelDelegate
     }
 
 
@@ -27,6 +30,7 @@ class EventCellViewModel {
         cell.secondCompetitorLabel.text = competitorsNames["secondCompetitor"]
         setCountDownViewBorder(view: cell.countDownView)
         updateCountDownTimerLabel(label: cell.countDownLabel, timer: cell.countDownTimer)
+        setFavouriteButtonImage(button: cell.favouriteButton, isFavourite: event.isFavourite)
     }
 
 
@@ -128,5 +132,35 @@ class EventCellViewModel {
 
 
         return remainingDaysText + remainingHoursText + ":" + remainingMinutesText + ":" + remainingSecondsText
+    }
+
+
+    /// Toggles the event favourite status.
+    ///
+    /// - Parameter button: The favourite button to update its' image.
+    func toggleFavouriteEvent(button: UIButton) {
+        event.isFavourite = !event.isFavourite
+        setFavouriteButtonImage(button: button, isFavourite: event.isFavourite)
+        sportViewModelDelegate?.updateEventData(eventID: event.eventID, isFavourite: event.isFavourite)
+        sportViewModelDelegate?.orderEvents()
+        NotificationCenter.default.post(Notification(name: NSNotification.Name("reloadEventsCollectionView")))
+    }
+
+
+    /// Sets up the favourite buttons image.
+    ///
+    /// - Parameters:
+    ///   - button: The button to update its' image.
+    ///   - isFavourite: The event favourite status.
+    func setFavouriteButtonImage(button: UIButton, isFavourite: Bool) {
+        var buttonImage = UIImage()
+
+        if isFavourite {
+            buttonImage = UIImage(named: "favouriteIcon")!
+        } else {
+            buttonImage = UIImage(named: "unfavouriteIcon")!
+        }
+
+        button.setImage(buttonImage, for: .normal)
     }
 }
