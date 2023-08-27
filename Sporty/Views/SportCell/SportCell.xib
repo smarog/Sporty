@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="40" width="625" height="305"/>
                                 <color key="backgroundColor" name="greenDark"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="999" constant="160" id="Oy0-mo-TlQ"/>
+                                    <constraint firstAttribute="height" priority="250" constant="160" id="Oy0-mo-TlQ"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UQD-li-e7e">
                                     <size key="itemSize" width="128" height="128"/>
@@ -82,7 +82,7 @@
                 <color key="backgroundColor" name="greenMedium"/>
                 <constraints>
                     <constraint firstItem="Vkl-1H-CKN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BWx-or-9KO"/>
-                    <constraint firstAttribute="bottom" secondItem="Vkl-1H-CKN" secondAttribute="bottom" id="ZbH-sH-ssD"/>
+                    <constraint firstAttribute="bottom" secondItem="Vkl-1H-CKN" secondAttribute="bottom" priority="999" id="ZbH-sH-ssD"/>
                     <constraint firstItem="Vkl-1H-CKN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="o9a-U7-kfv"/>
                     <constraint firstAttribute="trailing" secondItem="Vkl-1H-CKN" secondAttribute="trailing" id="teA-d4-Xbu"/>
                 </constraints>

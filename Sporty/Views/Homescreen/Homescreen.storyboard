@@ -35,8 +35,8 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="oL0-Ao-lNd"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="giA-ZP-LZ4">
-                                <rect key="frame" x="0.0" y="352" width="393" height="44"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="giA-ZP-LZ4">
+                                <rect key="frame" x="178" y="356" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" name="cream"/>
                             </activityIndicatorView>
