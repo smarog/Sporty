@@ -26,7 +26,7 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
         super.awakeFromNib()
         eventsCollectionView.delegate = self
         eventsCollectionView.dataSource = self
-        eventsCollectionView.register(UINib(nibName: "EventCellController", bundle: nil), forCellWithReuseIdentifier: "eventCell")
+        eventsCollectionView.register(UINib(nibName: "EventCell", bundle: nil), forCellWithReuseIdentifier: "eventCell")
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reloadCollectionView),
                                                name: NSNotification.Name("reloadEventsCollectionView"),

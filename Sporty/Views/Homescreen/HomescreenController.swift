@@ -9,8 +9,9 @@ import UIKit
 
 class HomescreenController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var sportsTableView: UITableView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    let homescreenViewModel = HomescreenViewModel()
+    let homescreenViewModel = HomescreenViewModel.sharedInstance
 
     
     override func viewDidLoad() {
@@ -22,24 +23,62 @@ class HomescreenController: UIViewController, UITableViewDataSource, UITableView
 
     /// Sets up the view.
     func setupView() {
-        homescreenViewModel.setupNavigationBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
+        setupNavigationBar()
         setupTableView()
+        loadingIndicator.startAnimating()
+        loadViewData()
+    }
 
-        homescreenViewModel.loadSportEvents(successCallback: {
-            self.homescreenViewModel.successCallback(tableView: self.sportsTableView)
-        }, errorCallBack: {
-            self.homescreenViewModel.errorCallback()
-        }, noDataCallback: {
-            self.homescreenViewModel.emptyResponseCallback()
-        })
+
+    /// Sets up the Navigation Bar.
+    func setupNavigationBar() {
+        setupNavigationBarImage()
+        setupNavigationBarColor()
+    }
+
+
+    /// Sets the navigiation bar background colour.
+    func setupNavigationBarColor() {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(named: "greenLight")
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.backgroundColor = UIColor(named: "greenDark")
+        }
+    }
+
+
+    /// Set the app logo at the Navigation Bar.
+    func setupNavigationBarImage() {
+        guard let logo = UIImage(named: "titleLogo") else { return }
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
     }
 
 
     /// Registers the custom table view cell and sets the estimated row height.
     func setupTableView() {
-        sportsTableView.register(UINib(nibName: "SportCellController", bundle: nil), forCellReuseIdentifier: "sportCell")
+        sportsTableView.register(UINib(nibName: "SportCell", bundle: nil), forCellReuseIdentifier: "sportCell")
         sportsTableView.estimatedRowHeight = 250
         sportsTableView.rowHeight = UITableView.automaticDimension
+    }
+
+
+    /// Loads the views' data.
+    func loadViewData() {
+        homescreenViewModel.loadSportEvents(successCallback: {
+            self.loadingIndicator.stopAnimating()
+            self.sportsTableView.reloadData()
+        }, errorCallBack: {
+            self.loadingIndicator.stopAnimating()
+            self.homescreenViewModel.errorCallback(alertAction: {
+                self.loadViewData()
+            })
+        })
     }
 
 

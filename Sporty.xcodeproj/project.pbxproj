@@ -14,10 +14,10 @@
 		F719A6B02A9A018200DF08F6 /* Homescreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F719A6AF2A9A018200DF08F6 /* Homescreen.storyboard */; };
 		F719A6B42A9A083A00DF08F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7758F132A9919DB00DB23E6 /* Assets.xcassets */; };
 		F760112E2A9A286E002644BE /* SportCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F760112C2A9A286E002644BE /* SportCellController.swift */; };
-		F760112F2A9A286E002644BE /* SportCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F760112D2A9A286E002644BE /* SportCellController.xib */; };
+		F760112F2A9A286E002644BE /* SportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F760112D2A9A286E002644BE /* SportCell.xib */; };
 		F76011312A9A4F37002644BE /* SportCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76011302A9A4F37002644BE /* SportCellViewModel.swift */; };
 		F76011352A9A5A5E002644BE /* EventCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76011332A9A5A5E002644BE /* EventCellController.swift */; };
-		F76011362A9A5A5E002644BE /* EventCellController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76011342A9A5A5E002644BE /* EventCellController.xib */; };
+		F76011362A9A5A5E002644BE /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76011342A9A5A5E002644BE /* EventCell.xib */; };
 		F76011382A9A5ECB002644BE /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76011372A9A5ECB002644BE /* EventCellViewModel.swift */; };
 		F7758F0B2A9919DA00DB23E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7758F0A2A9919DA00DB23E6 /* AppDelegate.swift */; };
 		F7758F0F2A9919DB00DB23E6 /* HomescreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7758F0E2A9919DB00DB23E6 /* HomescreenController.swift */; };
@@ -63,10 +63,10 @@
 		F7070B8C2A99355E005B29C7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F719A6AF2A9A018200DF08F6 /* Homescreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Homescreen.storyboard; sourceTree = "<group>"; };
 		F760112C2A9A286E002644BE /* SportCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCellController.swift; sourceTree = "<group>"; };
-		F760112D2A9A286E002644BE /* SportCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportCellController.xib; sourceTree = "<group>"; };
+		F760112D2A9A286E002644BE /* SportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportCell.xib; sourceTree = "<group>"; };
 		F76011302A9A4F37002644BE /* SportCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCellViewModel.swift; sourceTree = "<group>"; };
 		F76011332A9A5A5E002644BE /* EventCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellController.swift; sourceTree = "<group>"; };
-		F76011342A9A5A5E002644BE /* EventCellController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCellController.xib; sourceTree = "<group>"; };
+		F76011342A9A5A5E002644BE /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		F76011372A9A5ECB002644BE /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 		F7758F072A9919DA00DB23E6 /* Sporty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sporty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7758F0A2A9919DA00DB23E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F760112C2A9A286E002644BE /* SportCellController.swift */,
-				F760112D2A9A286E002644BE /* SportCellController.xib */,
+				F760112D2A9A286E002644BE /* SportCell.xib */,
 			);
 			path = SportCell;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F76011332A9A5A5E002644BE /* EventCellController.swift */,
-				F76011342A9A5A5E002644BE /* EventCellController.xib */,
+				F76011342A9A5A5E002644BE /* EventCell.xib */,
 			);
 			path = EventCell;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 				F719A6B02A9A018200DF08F6 /* Homescreen.storyboard in Resources */,
 				F719A6B42A9A083A00DF08F6 /* Assets.xcassets in Resources */,
 				F7758F172A9919DB00DB23E6 /* LaunchScreen.storyboard in Resources */,
-				F76011362A9A5A5E002644BE /* EventCellController.xib in Resources */,
-				F760112F2A9A286E002644BE /* SportCellController.xib in Resources */,
+				F76011362A9A5A5E002644BE /* EventCell.xib in Resources */,
+				F760112F2A9A286E002644BE /* SportCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
