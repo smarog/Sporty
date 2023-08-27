@@ -79,7 +79,9 @@ class SportCellViewModel {
     func expandCell(imageView: UIImageView, collectionView: UICollectionView) {
         imageView.image = UIImage(named: "collapseIcon")
         collectionView.isHidden = false
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            collectionView.reloadData()
+        }
     }
 
 
