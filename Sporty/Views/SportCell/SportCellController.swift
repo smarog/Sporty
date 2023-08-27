@@ -42,7 +42,7 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
     func setupCollectionView() {
         eventsCollectionView.delegate = self
         eventsCollectionView.dataSource = self
-        var flowLayout = UICollectionViewFlowLayout()
+        let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: 140, height: 140)
         flowLayout.scrollDirection = .horizontal
         eventsCollectionView.collectionViewLayout = flowLayout
