@@ -16,6 +16,13 @@ class EventCellController: UICollectionViewCell {
     @IBOutlet weak var secondCompetitorLabel: UILabel!
 
     var eventCellViewModel: EventCellViewModel?
+    var countDownTimer: Timer?
+
+
+    deinit {
+        countDownTimer?.invalidate()
+    }
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +36,17 @@ class EventCellController: UICollectionViewCell {
     func setupCell(eventData: Event) {
         eventCellViewModel = EventCellViewModel(event: eventData)
         eventCellViewModel?.setEventCell(cell: self)
+        countDownTimer = Timer.scheduledTimer(timeInterval: 1.0,
+                                              target: self,
+                                              selector: #selector(updateCountDownTimerLabel),
+                                              userInfo: nil,
+                                              repeats: true)
+    }
+
+
+    /// Updates the count down timer label.
+    @objc func updateCountDownTimerLabel() {
+        eventCellViewModel?.updateCountDownTimerLabel(label: countDownLabel, timer: countDownTimer)
     }
 
 
