@@ -32,9 +32,11 @@ class EventCellController: UICollectionViewCell {
 
     /// Sets up the event cell.
     ///
-    /// - Parameter eventData: The event data to set.
-    func setupCell(eventData: Event) {
-        eventCellViewModel = EventCellViewModel(event: eventData)
+    /// - Parameters:
+    ///   - eventData: The event data to set.
+    ///   - sportViewModelDelegate: The sports view model delegate.
+    func setupCell(eventData: Event, sportViewModelDelegate: SportCellViewModel?) {
+        eventCellViewModel = EventCellViewModel(event: eventData, sportViewModelDelegate: sportViewModelDelegate)
         eventCellViewModel?.setEventCell(cell: self)
         countDownTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                               target: self,
@@ -50,6 +52,10 @@ class EventCellController: UICollectionViewCell {
     }
 
 
+    /// Toggles the events favourite status.
+    ///
+    /// - Parameter sender: The favourite button that was pressed.
     @IBAction func toggleFavourite(_ sender: UIButton) {
+        eventCellViewModel?.toggleFavouriteEvent(button: sender)
     }
 }

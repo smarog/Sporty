@@ -12,6 +12,7 @@ struct Event: Codable {
     let sportID: String
     let eventName: String
     let startTime: Int
+    var isFavourite: Bool = false
     
     
     enum CodingKeys: String, CodingKey {

@@ -12,9 +12,13 @@ import UIKit
 class SportCellViewModel {
     var events: [Event] = []
 
+    weak var homescreenViewModelDelegate: HomescreenViewModel?
 
-    init(events: [Event]) {
+
+    init(events: [Event], homescreenViewModelDelegate: HomescreenViewModel?) {
         self.events = events
+        self.homescreenViewModelDelegate = homescreenViewModelDelegate
+        orderEvents()
     }
 
 
@@ -85,5 +89,33 @@ class SportCellViewModel {
     /// - Returns: The event data.
     func getEventData(index: Int) -> Event {
         return events[index]
+    }
+
+
+    /// Updates the events data.
+    ///
+    /// - Parameters:
+    ///   - eventID: The id of the event to update.
+    ///   - isFavourite: The favourite status of the event.
+    func updateEventData(eventID: String, isFavourite: Bool) {
+        guard let eventIndex = events.firstIndex(where: { $0.eventID == eventID }) else { return }
+        events[eventIndex].isFavourite = isFavourite
+        homescreenViewModelDelegate?.updateSportData(sportID: events[eventIndex].sportID, eventID: eventID, isFavourite: isFavourite)
+    }
+
+
+    /// Orders the events based on their favourite status.
+    func orderEvents() {
+        events = events.sorted(by: { (firstEvent, secondEvent) -> Bool in
+            if firstEvent.isFavourite && !secondEvent.isFavourite {
+                return true
+            }
+
+            if !firstEvent.isFavourite && secondEvent.isFavourite {
+                return false
+            }
+
+            return false
+        })
     }
 }

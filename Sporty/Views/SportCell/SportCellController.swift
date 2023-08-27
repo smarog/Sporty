@@ -16,13 +16,21 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
 
     var sportCellViewModel: SportCellViewModel?
 
-    
+
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("reloadEventsCollectionView"), object: nil)
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         eventsCollectionView.delegate = self
         eventsCollectionView.dataSource = self
         eventsCollectionView.register(UINib(nibName: "EventCellController", bundle: nil), forCellWithReuseIdentifier: "eventCell")
-        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadCollectionView),
+                                               name: NSNotification.Name("reloadEventsCollectionView"),
+                                               object: nil)
     }
 
 
@@ -38,8 +46,9 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
     ///   - sportName: The name of the sport to display.
     ///   - isExpanded: If the cell is expanded or not.
     ///   - sportEvents: The events of the selected sport.
-    func setupCell(sportIconName: String, sportName: String, isExpanded: Bool, sportEvents: [Event]) {
-        sportCellViewModel = SportCellViewModel(events: sportEvents)
+    ///   - homescreenViewModelDelegate: The homescreen view model delegate.
+    func setupCell(sportIconName: String, sportName: String, isExpanded: Bool, sportEvents: [Event], homescreenViewModelDelegate: HomescreenViewModel?) {
+        sportCellViewModel = SportCellViewModel(events: sportEvents, homescreenViewModelDelegate: homescreenViewModelDelegate)
         sportCellViewModel?.setupSportsCell(cell: self, sportName: sportName, sportIconName: sportIconName, isExpanded: isExpanded)
     }
 
@@ -49,6 +58,12 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
     /// - Parameter isExpanded: If the cell is expanded or not.
     func expandCollapseCell(isExpanded: Bool) {
         sportCellViewModel?.toggleCell(isExpanded: isExpanded, imageView: expandCollapseIconImageView, collectionView: eventsCollectionView)
+    }
+
+
+    /// Reloads the events collection view
+    @objc func reloadCollectionView() {
+        eventsCollectionView.reloadData()
     }
 
 
@@ -64,7 +79,7 @@ class SportCellController: UITableViewCell, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath) as! EventCellController
         guard let event = sportCellViewModel?.getEventData(index: indexPath.item) else { return cell }
-        cell.setupCell(eventData: event)
+        cell.setupCell(eventData: event, sportViewModelDelegate: sportCellViewModel)
         return cell
     }
 }

@@ -35,7 +35,7 @@ class HomescreenController: UIViewController, UITableViewDataSource, UITableView
     }
 
 
-    /// Registers the custom table view cell and sets the estibated row height.
+    /// Registers the custom table view cell and sets the estimated row height.
     func setupTableView() {
         sportsTableView.register(UINib(nibName: "SportCellController", bundle: nil), forCellReuseIdentifier: "sportCell")
         sportsTableView.estimatedRowHeight = 250
