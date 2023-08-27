@@ -10,15 +10,13 @@ import Foundation
 enum Result<T> {
     case success(T)
     case failure(Error)
-    case empty
 }
 
 
 class ServiceProvider {
     var urlSession = URLSession.shared
-    
-    
-    init() { }
+
+    static let sharedInstance = ServiceProvider()
     
     
     /// Loads the data from the specified endpoint.
@@ -40,8 +38,6 @@ class ServiceProvider {
                 }
             case .failure(let error):
                 completion(.failure(error))
-            case .empty:
-                completion(.empty)
             }
         })
     }
@@ -61,10 +57,6 @@ class ServiceProvider {
             } else if let responseData = data {
                 DispatchQueue.main.async {
                     completion(.success(responseData))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(.empty)
                 }
             }
         }.resume()

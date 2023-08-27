@@ -22,53 +22,18 @@ enum SportID: String {
 
 
 class HomescreenViewModel {
+    static var sharedInstance = HomescreenViewModel()
+
     var sportsData: [Sports] = []
 
 
-    /// Sets up the Navigation Bar.
+    /// Retrieves the sport events from the API.
     ///
     /// - Parameters:
-    ///   - navigationController: The Navigation Controller to change its' colour.
-    ///   - navigationItem: The Navigation item to ad the app Logo at.
-    func setupNavigationBar(navigationController: UINavigationController?, navigationItem: UINavigationItem) {
-        setupNavigationBarImage(navigationItem)
-
-        if let unwrapedNavigationController = navigationController {
-            setupNavigationBarColor(unwrapedNavigationController)
-        }
-    }
-
-
-    /// Sets the navigiation bar background colour.
-    ///
-    /// - Parameter navigationController: The navigation controller to change its' color.
-    func setupNavigationBarColor(_ navigationController: UINavigationController) {
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor(named: "greenLight")
-            navigationController.navigationBar.standardAppearance = appearance
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-        } else {
-            navigationController.navigationBar.backgroundColor = UIColor(named: "greenDark")
-        }
-    }
-
-
-    /// Set the app logo at the Navigation Bar.
-    ///
-    /// - Parameter navigationItem: The navigation item to add the logo at.
-    func setupNavigationBarImage(_ navigationItem: UINavigationItem) {
-        guard let logo = UIImage(named: "titleLogo") else { return }
-        let imageView = UIImageView(image: logo)
-        imageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = imageView
-    }
-
-
-    /// Retrieves the sport events from the API.
-    func loadSportEvents(successCallback: @escaping () -> Void, errorCallBack: @escaping () -> Void, noDataCallback: @escaping () -> Void) {
-        let serviceProvider = ServiceProvider()
+    ///   - successCallback: The action to be done when the API completes successfully.
+    ///   - errorCallBack: The action to be done if we receive an error from the API.
+    func loadSportEvents(successCallback: @escaping () -> Void, errorCallBack: @escaping () -> Void) {
+        let serviceProvider = ServiceProvider.sharedInstance
         
         serviceProvider.load(service: SportyServices(), decodeType: [Sports].self, completion: { result in
             switch result {
@@ -79,9 +44,6 @@ class HomescreenViewModel {
                 self.sportsData = []
                 errorCallBack()
                 print(error)
-            case .empty:
-                self.sportsData = []
-                noDataCallback()
             }
         })
     }
@@ -95,13 +57,19 @@ class HomescreenViewModel {
     }
 
 
-    /// Reloads the table view when we receive the API response successfully.
+    /// Displays an alert dialog when we receive an error from the API.
     ///
-    /// - Parameter tableView: The tableView to reload.
-    func successCallback(tableView: UITableView) {
-        DispatchQueue.main.async {
-            tableView.reloadData()
-        }
+    /// - Parameter alertAction: The action to be done when the user taps on the try again button.
+    func errorCallback(alertAction: @escaping () -> Void) {
+        let alertController = UIAlertController(title: "Error",
+                                                message: "Oops, something went wrong. Please try again.",
+                                                preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Try again", style: .default, handler: { _ in
+            alertAction()
+        })
+
+        alertController.addAction(tryAgainAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true)
     }
 
 
@@ -164,16 +132,6 @@ class HomescreenViewModel {
         case .darts:
             return "dartsIcon"
         }
-    }
-
-
-    func errorCallback() {
-
-    }
-
-    
-    func emptyResponseCallback() {
-        
     }
 
 
