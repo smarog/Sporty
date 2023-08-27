@@ -25,6 +25,7 @@ class HomescreenController: UIViewController, UITableViewDataSource, UITableView
     func setupView() {
         setupNavigationBar()
         setupTableView()
+        setupLoadingIndicatorStyle()
         loadingIndicator.startAnimating()
         loadViewData()
     }
@@ -65,6 +66,16 @@ class HomescreenController: UIViewController, UITableViewDataSource, UITableView
         sportsTableView.register(UINib(nibName: "SportCell", bundle: nil), forCellReuseIdentifier: "sportCell")
         sportsTableView.estimatedRowHeight = 250
         sportsTableView.rowHeight = UITableView.automaticDimension
+    }
+
+
+    /// Sets the loading indicator style based on the iOS version.
+    func setupLoadingIndicatorStyle() {
+        if #available(iOS 13.0, *) {
+            loadingIndicator.style = .large
+        } else {
+            loadingIndicator.style = .whiteLarge
+        }
     }
 
 
