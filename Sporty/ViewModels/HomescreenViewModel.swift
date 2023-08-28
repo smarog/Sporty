@@ -27,6 +27,9 @@ class HomescreenViewModel {
     var sportsData: [Sports] = []
 
 
+    private init() { }
+
+
     /// Retrieves the sport events from the API.
     ///
     /// - Parameters:

@@ -113,10 +113,6 @@ class SportCellViewModel {
                 return true
             }
 
-            if !firstEvent.isFavourite && secondEvent.isFavourite {
-                return false
-            }
-
             return false
         })
     }
