@@ -14,11 +14,12 @@ enum Result<T> {
 
 
 class ServiceProvider {
-    var urlSession = URLSession.shared
-
     static let sharedInstance = ServiceProvider()
-    
-    
+
+
+    private init() {}
+
+
     /// Loads the data from the specified endpoint.
     ///
     /// - Parameters:
@@ -49,6 +50,8 @@ class ServiceProvider {
     ///   - request: The request to make.
     ///   - completion: The job to be done when the response is received.
     private func call(_ request: URLRequest, completion: @escaping (Result<Data>) -> Void) {
+        let urlSession = URLSession.shared
+
         urlSession.dataTask(with: request) { (data, _, error) in
             if let responseError = error {
                 DispatchQueue.main.async {
